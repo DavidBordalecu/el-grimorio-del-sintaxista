@@ -554,6 +554,15 @@ kbd {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.language-grid--five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.language-card--ia {
+  border-top-color: var(--emerald);
+}
+
 .anti-ai-note {
   margin-top: 18px;
   padding: 12px 16px;
@@ -681,7 +690,8 @@ button.language-card:focus-visible {
   }
 
   .concept-grid,
-  .language-grid--four {
+  .language-grid--four,
+  .language-grid--five {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -702,7 +712,8 @@ button.language-card:focus-visible {
   .split-cards,
   .concept-grid,
   .language-grid,
-  .language-grid--four {
+  .language-grid--four,
+  .language-grid--five {
     grid-template-columns: minmax(0, 1fr);
   }
 

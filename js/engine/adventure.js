@@ -5,7 +5,8 @@ const COURSE_PAGES = {
   javascript: 'juego.html',
   python: 'python.html',
   rust: 'rust.html',
-  ruby: 'ruby.html'
+  ruby: 'ruby.html',
+  ia: 'ia.html'
 };
 const LEVELS = ['beginner', 'medium', 'hard', 'hardcore'];
 

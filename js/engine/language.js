@@ -1,11 +1,12 @@
 const STORAGE_KEY = 'grimorio-lenguaje:v1';
-export const LANGUAGES = ['javascript', 'python', 'rust', 'ruby'];
+export const LANGUAGES = ['javascript', 'python', 'rust', 'ruby', 'ia'];
 
 export const LANGUAGE_LABELS = {
   javascript: 'JavaScript',
   python: 'Python',
   rust: 'Rust',
-  ruby: 'Ruby / Rails'
+  ruby: 'Ruby / Rails',
+  ia: 'Desarrollo con IA'
 };
 
 export function getLanguage() {

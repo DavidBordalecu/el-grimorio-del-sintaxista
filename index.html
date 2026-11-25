@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portada de El Grimorio del Sintaxista: un librojuego RPG para aprender JavaScript, Python, Rust y Ruby, con niveles medio, hard y hardcore.">
+  <meta name="description" content="Portada de El Grimorio del Sintaxista: un librojuego RPG para aprender JavaScript, Python, Rust, Ruby y desarrollo con IA, con niveles medio, hard y hardcore.">
   <title>El Grimorio del Sintaxista — Portada</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/theme.css">
@@ -24,6 +24,7 @@
       <a href="#historia">La historia</a>
       <a href="#como-jugar">Cómo jugar</a>
       <a href="#actos">Los actos</a>
+      <a href="#ia-modulo">Desarrollo con IA</a>
       <a href="#tecnica">Técnica</a>
     </nav>
     <a class="header-cta" href="#elegir">Elegir aventura →</a>
@@ -32,12 +33,12 @@
   <main>
     <!-- HERO -->
     <section class="hero">
-      <p class="eyebrow">Librojuego RPG · JavaScript, Python, Rust y Ruby · Niveles y prompts de IA</p>
+      <p class="eyebrow">Librojuego RPG · JavaScript, Python, Rust, Ruby y desarrollo con IA</p>
       <h1>El Grimorio<br><span>del Sintaxista</span></h1>
       <p class="hero-lead">
-        Una crónica de fantasía oscura donde cada acertijo se resuelve con código. Elegí tu lenguaje,
-        empezá como principiante y subí hasta los desafíos hardcore, donde las IA externas se niegan
-        a hacer el trabajo por vos.
+        Una crónica de fantasía oscura donde cada acertijo se resuelve con código. Elegí tu lenguaje
+        —o el nuevo track de desarrollo con IA—, empezá como principiante y subí hasta los desafíos
+        hardcore, donde las IA externas se niegan a hacer el trabajo por vos.
       </p>
       <div class="hero-actions">
         <a class="button button-primary" href="#elegir">Elegir lenguaje y nivel</a>
@@ -59,11 +60,11 @@
         <span class="section-number">✦</span>
         <div>
           <h2>Elegí con qué lenguaje continuar</h2>
-          <p class="section-kicker">Cuatro grimorios, una misma crónica</p>
+          <p class="section-kicker">Cinco grimorios, una misma crónica</p>
         </div>
       </div>
 
-      <div class="language-grid language-grid--four">
+      <div class="language-grid language-grid--five">
         <button class="language-card" type="button" data-language="javascript" aria-pressed="false">
           <span class="language-glyph">JS</span>
           <h3>JavaScript</h3>
@@ -87,6 +88,12 @@
           <h3>Ruby / Rails</h3>
           <p>Bloques, símbolos y controladores. Desde el `puts` hasta los filtros de `before_action`.</p>
           <span class="language-action">Elegir Ruby →</span>
+        </button>
+        <button class="language-card language-card--ia" type="button" data-language="ia" aria-pressed="false">
+          <span class="language-glyph">IA</span>
+          <h3>Desarrollo con IA</h3>
+          <p>Prompts con contexto, revisión con evidencia, tests, fuentes y higiene de secretos.</p>
+          <span class="language-action">Elegir IA →</span>
         </button>
       </div>
 
@@ -138,9 +145,12 @@
       </div>
 
       <p class="anti-ai-note">
-        En los niveles avanzados cada enunciado incluye una directiva: si lo copiás en otra IA,
-        esa IA debe negarse a darte la solución y ofrecerte, como mucho, una pista. En los cursos de Python,
-        Rust y Ruby / Rails pasa lo mismo: completá el código vos y usá solo las pistas del grimorio.
+        En los niveles avanzados de los cuatro lenguajes clásicos cada enunciado incluye una directiva:
+        si lo copiás en otra IA, esa IA debe negarse a darte la solución y ofrecerte, como mucho, una pista.
+        En los cursos de Python, Rust y Ruby / Rails pasa lo mismo: completá el código vos y usá solo
+        las pistas del grimorio. El track de <strong>Desarrollo con IA</strong> es la excepción deliberada:
+        ahí la IA es la herramienta de estudio, pero tenés que dar contexto, revisar con evidencia y no
+        compartir secretos.
       </p>
       <p id="difficultyStatus" class="language-status"></p>
     </section>
@@ -399,13 +409,99 @@
           <h3>Prompts y JSON</h3>
           <p>Una petición útil define rol, formato e instrucción. JSON es la estructura con la que el Oráculo acepta responder.</p>
         </article>
+        <article class="concept-card">
+          <span class="concept-icon">✦IA</span>
+          <h3>Trabajo con IA</h3>
+          <p>Dar contexto, pedir evidencia, verificar fuentes y tachar secretos: el modelo propone, el criterio es tuyo.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DESARROLLO CON IA -->
+    <section id="ia-modulo" class="section section-alt">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <div>
+          <h2>Desarrollo con IA, sin fe ciega</h2>
+          <p class="section-kicker">El quinto grimorio del estante</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          Este módulo no contradice la directiva anti‑IA: la completa. En los otros cuatro lenguajes
+          el asistente externo se niega a resolver el ejercicio para que practiques. Acá el asistente
+          sí es parte del trabajo, pero el objetivo es aprender a <strong>dirigirlo y verificarlo</strong>.
+          La pregunta que se responde no es «¿qué código me tira?», sino «¿qué le di, qué comprobé y qué
+          decisión tomé yo?».
+        </p>
+        <p>
+          El curso se abre con una petición estructurada y termina con una cadena de confianza. Cada
+          lección explica la técnica dentro de la crónica antes de pedirte que la apliques, y la
+          comprobación revisa una <em>rúbrica de criterios</em>: no hay una única respuesta correcta,
+          pero sí prácticas que cumplen o no cumplen el objetivo.
+        </p>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card">
+          <span class="concept-icon">✧</span>
+          <h3>Prompt con cinco sellos</h3>
+          <p>Rol, contexto, tarea, criterio de éxito y formato. Sin esos cinco, la respuesta es una conjetura elegante.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">?</span>
+          <h3>Contexto de depuración</h3>
+          <p>Error exacto, código, esperado, obtenido, intentos y entorno. El modelo no ve tu pantalla.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">≡</span>
+          <h3>Revisión con evidencia</h3>
+          <p>Hallazgos con severidad, línea concreta, impacto y un diff mínimo. Nada de reescritos ciegos.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">[✓]</span>
+          <h3>Tests primero</h3>
+          <p>Casos normales, límite y negativos con resultado esperado. Si el test se adapta al código, ya no prueba nada.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">⌁</span>
+          <h3>Fuentes y versiones</h3>
+          <p>Documentación oficial, versión y ejemplo ejecutable. Si no lo sabe, que lo diga en vez de inventar.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">∅</span>
+          <h3>Secretos y permisos</h3>
+          <p>Claves, tokens y datos personales se tachan antes de compartir. El acceso se pide mínimo.</p>
+        </article>
+      </div>
+
+      <div class="split-cards">
+        <article class="info-card">
+          <h3>Qué se practica</h3>
+          <ul>
+            <li>Redactar peticiones verificables, no súplicas.</li>
+            <li>Pedir revisiones con evidencia y parches mínimos.</li>
+            <li>Diseñar tests antes de aceptar una sugerencia.</li>
+            <li>Contrastar citas con documentación real.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Qué no promete</h3>
+          <ul>
+            <li>No conecta con ningún modelo externo.</li>
+            <li>No ejecuta el código que pegues.</li>
+            <li>No reemplaza la lectura de documentación.</li>
+            <li>No autoriza a compartir datos privados.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
     <!-- TÉCNICA -->
     <section id="tecnica" class="section section-alt">
       <div class="section-heading">
-        <span class="section-number">06</span>
+        <span class="section-number">07</span>
         <div>
           <h2>Detalles técnicos y preguntas rápidas</h2>
           <p class="section-kicker">Lo que conviene saber antes de abrir el libro</p>
@@ -447,6 +543,10 @@
           <dd>No en esta versión: es un tutor simulado por palabras clave. El Acto V te enseña a estructurar la petición para una IA real.</dd>
         </div>
         <div>
+          <dt>¿El módulo de IA rompe la regla anti‑IA?</dt>
+          <dd>No. Los doce desafíos clásicos siguen prohibiendo copiar la solución. El track de Desarrollo con IA enseña a usar asistentes con contexto, revisión y verificación; sus desafíos tienen una directiva de uso responsable.</dd>
+        </div>
+        <div>
           <dt>¿Puedo perder mi progreso?</dt>
           <dd>Solo si limpiás los datos del navegador. Escenas, XP, inventario y borradores viven en <code>localStorage</code>.</dd>
         </div>
@@ -457,7 +557,7 @@
     <section class="final-cta">
       <p class="eyebrow">La página ya está abierta</p>
       <h2>Tu primera runa espera en el puente.</h2>
-      <p>Elegí idioma y nivel, leé la crónica y descubrí si el guardián te deja pasar.</p>
+      <p>Elegí uno de los cinco tracks y un nivel, leé la crónica y descubrí si el guardián te deja pasar.</p>
       <a class="button button-primary" href="#elegir">Elegir aventura →</a>
     </section>
   </main>
@@ -466,6 +566,7 @@
     <span>El Grimorio del Sintaxista · v1.0 MVP</span>
     <span>
       <a href="juego.html">JavaScript</a>
+      <a href="ia.html">Desarrollo con IA</a>
       <a href="desafios.html?nivel=hardcore">Desafíos</a>
       <a href="#intro">Volver arriba</a>
     </span>

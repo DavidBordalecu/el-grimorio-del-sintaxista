@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curso de desarrollo con IA de El Grimorio del Sintaxista: prompts con contexto, revisión crítica, tests, fuentes y secretos.">
+  <title>El Grimorio del Sintaxista — Desarrollo con IA</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="index.html">
+      <span aria-hidden="true">✦</span>
+      <span>El Grimorio del Sintaxista · IA</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación del curso de IA">
+      <a href="index.html">Portada</a>
+      <a href="#guia">Cómo trabajar</a>
+      <a href="#lecciones">Lecciones</a>
+      <a href="#progreso">Progreso</a>
+      <a href="desafios.html?lenguaje=ia&amp;nivel=medium">Desafíos</a>
+    </nav>
+    <a class="header-cta" href="index.html#elegir" data-language="ia">Cambiar de aventura →</a>
+  </header>
+
+  <main class="course-main">
+    <section class="hero course-hero">
+      <p class="eyebrow">Edición IA · Usá el modelo como compañero, no como oráculo</p>
+      <h1>El Grimorio<br><span>del Desarrollo con IA</span></h1>
+      <p class="hero-lead">
+        Este grimorio no te pide que adivines qué escribirle a un asistente: te enseña a dar contexto,
+        fijar criterios, revisar con evidencia y verificar antes de confiar. Acá la IA es una herramienta
+        de estudio; el criterio sigue siendo tuyo.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#guia">Ver cómo trabajar</a>
+        <a class="button button-secondary" href="#lecciones">Ir a las lecciones</a>
+      </div>
+      <p class="hero-note">No se ejecuta código ni se consulta ningún modelo: la aplicación comprueba que tu respuesta cubra la rubrica.</p>
+      <div class="hero-emblem" aria-hidden="true">
+        <span>rol</span>
+        <span>contexto</span>
+        <span>criterio</span>
+        <span>tests</span>
+        <span>secretos</span>
+      </div>
+    </section>
+
+    <section id="guia" class="section setup-guide">
+      <div class="section-heading">
+        <span class="section-number">✧</span>
+        <div>
+          <h2>Antes de empezar: cómo trabajar</h2>
+          <p class="section-kicker">Cuatro pasos para cada lección</p>
+        </div>
+      </div>
+
+      <div class="setup-steps">
+        <div class="setup-step"><span>01</span><div><h3>Leé la escena</h3><p>Cada lección cuenta por qué esa práctica existe dentro de la crónica.</p></div></div>
+        <div class="setup-step"><span>02</span><div><h3>Estudiá la teoría</h3><p>El bloque «La teoría detrás del conjuro» explica la técnica antes de pedirte que la apliques.</p></div></div>
+        <div class="setup-step"><span>03</span><div><h3>Escribí tu respuesta</h3><p>Completá la plantilla con tu prompt, consulta o checklist. Podés pedir pistas sin perder el sello.</p></div></div>
+        <div class="setup-step"><span>04</span><div><h3>Comprobá y seguí</h3><p>La app revisa los criterios, no una respuesta única. Sumás XP y se abre la siguiente página.</p></div></div>
+      </div>
+
+      <div class="setup-grid">
+        <article class="setup-card">
+          <h3>Una petición débil</h3>
+          <p class="ai-compare">«Arreglá esta función, no funciona.»</p>
+          <p class="setup-card-note">Sin error, sin código, sin entorno y sin criterio: el asistente solo puede adivinar.</p>
+        </article>
+        <article class="setup-card">
+          <h3>Una petición útil</h3>
+          <p class="ai-compare">«Actuá como revisor. Contexto: checkout en Python 3.11. Error: traceback adjunto. Esperaba 10%, obtuve 0. Mostrá la línea, el impacto y un diff mínimo. Si falta contexto, preguntá.»</p>
+          <p class="setup-card-note">Rol, contexto, evidencia, formato y una pregunta concreta.</p>
+        </article>
+      </div>
+
+      <p class="setup-note">Nunca pegues claves, tokens, correos reales ni datos de clientes. Reemplazalos por marcadores antes de compartir un error.</p>
+    </section>
+
+    <section id="progreso" class="course-progress-section">
+      <div class="section-heading">
+        <span class="section-number">✧</span>
+        <div>
+          <h2>Tu progreso</h2>
+          <p class="section-kicker">Cada sello roto queda guardado en este navegador</p>
+        </div>
+      </div>
+
+      <div class="progress-card">
+        <div class="progress-stats">
+          <div><span>Nivel</span><strong id="courseLevel">1</strong></div>
+          <div><span>Experiencia</span><strong id="courseXp">0</strong></div>
+          <div><span>Lecciones</span><strong id="courseCount">0 / 6</strong></div>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div id="courseBar" class="progress-fill"></div></div>
+        <div class="inventory-block">
+          <h3>Hechizos desbloqueados</h3>
+          <ul id="aiInventory" class="python-inventory"></ul>
+        </div>
+        <button id="resetAiBtn" class="button button-secondary reset-button" type="button">Reiniciar curso</button>
+      </div>
+    </section>
+
+    <section id="lecciones" class="course-lessons-section">
+      <div class="section-heading">
+        <span class="section-number">❧</span>
+        <div>
+          <h2>Las lecciones</h2>
+          <p class="section-kicker">Aprendé a trabajar con IA sin delegar el criterio</p>
+        </div>
+      </div>
+      <div id="lessonsContainer" class="lessons-container"></div>
+    </section>
+
+    <section id="cambiar" class="section language-section final-language">
+      <div class="section-heading">
+        <span class="section-number">✦</span>
+        <div>
+          <h2>Elegí con qué lenguaje seguir</h2>
+          <p class="section-kicker">Tu elección queda guardada para la próxima visita</p>
+        </div>
+      </div>
+      <div class="language-grid language-grid--five">
+        <a class="language-card" href="juego.html" data-language="javascript"><span class="language-glyph">JS</span><h3>JavaScript</h3><p>El grimorio original con ejecución real.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card" href="python.html" data-language="python"><span class="language-glyph">PY</span><h3>Python</h3><p>Variables, bloques y diccionarios.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card" href="rust.html" data-language="rust"><span class="language-glyph">RS</span><h3>Rust</h3><p>Préstamos y resultados.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card" href="ruby.html" data-language="ruby"><span class="language-glyph">RB</span><h3>Ruby / Rails</h3><p>Bloques y controladores.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card language-card--ia" href="ia.html" data-language="ia"><span class="language-glyph">IA</span><h3>Desarrollo con IA</h3><p>Estás en este curso.</p><span class="language-action">Continuar →</span></a>
+      </div>
+      <p id="languageStatus" class="language-status"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>El Grimorio del Sintaxista · Desarrollo con IA</span>
+    <span>
+      <a href="index.html">Portada</a>
+      <a href="desafios.html?lenguaje=ia&amp;nivel=hardcore">Desafíos de IA</a>
+      <a href="#progreso">Volver arriba</a>
+    </span>
+  </footer>
+
+  <script type="module" src="js/ai-course.js"></script>
+  <script type="module" src="js/engine/language.js"></script>
+</body>
+</html>

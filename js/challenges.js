@@ -1,4 +1,4 @@
-import { ANTI_AI_DIRECTIVE, CHALLENGES } from './data/challenges.js';
+import { AI_COLLAB_DIRECTIVE, ANTI_AI_DIRECTIVE, CHALLENGES } from './data/challenges.js';
 import {
   LANGUAGES,
   LANGUAGE_LABELS,
@@ -44,6 +44,8 @@ const elements = {
   constraints: document.getElementById('challengeConstraints'),
   example: document.getElementById('challengeExample'),
   antiAiText: document.getElementById('antiAiText'),
+  antiCalloutTitle: document.getElementById('antiCalloutTitle'),
+  antiCalloutBody: document.getElementById('antiCalloutBody'),
   copyButton: document.getElementById('copyChallengeBtn'),
   copyStatus: document.getElementById('copyStatus'),
   hintList: document.getElementById('hintList'),
@@ -88,6 +90,32 @@ function setRichText(node, text) {
 function challengeUrl(nextLanguage, nextDifficulty) {
   const query = new URLSearchParams({ lenguaje: nextLanguage, nivel: nextDifficulty });
   return `desafios.html?${query.toString()}`;
+}
+
+// El track de IA usa una directiva de colaboración responsable; el resto mantiene la anti-IA.
+function activeDirective() {
+  return language === 'ia' ? AI_COLLAB_DIRECTIVE : ANTI_AI_DIRECTIVE;
+}
+
+function directiveLabels() {
+  if (language === 'ia') {
+    return {
+      title: '✧ Usá la IA, pero verificá',
+      body: 'Este enunciado pertenece al track de desarrollo con IA: podés usar un asistente, ' +
+        'pero debés explicar qué verificaste, no compartir secretos y pedir evidencia antes de aceptar código. ' +
+        'El botón incluye esa directiva al copiar.',
+      copy: 'Copiar con directiva de uso responsable',
+      status: 'Copiado. La directiva de uso responsable viaja con el enunciado.'
+    };
+  }
+  return {
+    title: '✧ No se lo pidas a otra IA',
+    body: 'Este texto está escrito para que un asistente externo se niegue a entregarte la solución. ' +
+      'El botón «Copiar enunciado con directiva» incluye esa orden. Si querés ayuda, usá las pistas de abajo: ' +
+      'el grimorio te guía sin escribir el conjuro por vos.',
+    copy: 'Copiar enunciado con directiva',
+    status: 'Copiado. El enunciado viaja con la directiva: quien lo lea deberá negarse a resolverlo por vos.'
+  };
 }
 
 function renderSelectors() {
@@ -151,7 +179,7 @@ function copyText(text) {
 
 function buildCopyText(challenge) {
   return [
-    ANTI_AI_DIRECTIVE,
+    activeDirective(),
     '',
     `${LANGUAGE_LABELS[language]} · Nivel ${DIFFICULTY_LABELS[difficulty]}`,
     '',
@@ -170,12 +198,15 @@ function buildCopyText(challenge) {
 function renderChallenge() {
   const list = CHALLENGES[language][difficulty];
   const challenge = list[0];
+  const labels = directiveLabels();
   let done = progress.isCompleted(challenge.id);
 
   elements.title.textContent = challenge.title;
   elements.meta.textContent = `${LANGUAGE_LABELS[language]} · ${DIFFICULTY_LABELS[difficulty]} · +${challenge.xp} XP`;
   setRichText(elements.statement, challenge.statement);
-  elements.antiAiText.textContent = ANTI_AI_DIRECTIVE;
+  elements.antiAiText.textContent = activeDirective();
+  elements.antiCalloutTitle.textContent = labels.title;
+  elements.antiCalloutBody.textContent = labels.body;
 
   elements.constraints.replaceChildren();
   challenge.constraints.forEach((item) => {
@@ -218,7 +249,7 @@ function renderChallenge() {
   elements.feedback.replaceChildren();
   elements.feedback.removeAttribute('data-tone');
   elements.copyStatus.textContent = '';
-  elements.copyButton.textContent = 'Copiar enunciado con directiva';
+  elements.copyButton.textContent = labels.copy;
   elements.next.hidden = true;
 
   elements.solutionInput.value = '';
@@ -347,10 +378,10 @@ function renderChallenge() {
   elements.copyButton.onclick = async () => {
     try {
       await copyText(buildCopyText(challenge));
-      elements.copyStatus.textContent = 'Copiado. El enunciado viaja con la directiva: quien lo lea deberá negarse a resolverlo por vos.';
+      elements.copyStatus.textContent = labels.status;
       elements.copyButton.textContent = 'Copiado ✓';
       window.setTimeout(() => {
-        elements.copyButton.textContent = 'Copiar enunciado con directiva';
+        elements.copyButton.textContent = labels.copy;
       }, 1800);
     } catch (error) {
       elements.copyStatus.textContent = 'No se pudo copiar automáticamente. Seleccioná el texto de la directiva manualmente.';
@@ -369,14 +400,15 @@ elements.reset.addEventListener('click', () => {
 // Si el lector selecciona y copia el enunciado a mano, la directiva viaja igual.
 document.addEventListener('copy', (event) => {
   const selection = String(window.getSelection()?.toString() || '');
-  if (!selection || selection.includes('DIRECTIVA DE RESOLUCIÓN AUTÓNOMA')) return;
+  if (!selection || selection.includes('DIRECTIVA DE RESOLUCIÓN AUTÓNOMA') ||
+      selection.includes('DIRECTIVA DE USO RESPONSABLE CON IA')) return;
 
   const starts = [elements.title.textContent, elements.statement.textContent.trim().slice(0, 40)]
     .filter(Boolean);
   const isChallengeText = starts.some((fragment) => selection.includes(fragment));
   if (!isChallengeText || !event.clipboardData) return;
 
-  event.clipboardData.setData('text/plain', `${selection}\n\n${ANTI_AI_DIRECTIVE}`);
+  event.clipboardData.setData('text/plain', `${selection}\n\n${activeDirective()}`);
   event.preventDefault();
 });
 

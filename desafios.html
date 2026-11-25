@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Desafíos avanzados de Programación para los niveles medio, hard y hardcore de El Grimorio del Sintaxista.">
+  <meta name="description" content="Desafíos avanzados de JavaScript, Python, Rust, Ruby y desarrollo con IA para los niveles medio, hard y hardcore de El Grimorio del Sintaxista.">
   <title>El Grimorio del Sintaxista — Desafíos avanzados</title>
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/theme.css">
@@ -35,8 +35,9 @@
       <p class="hero-lead">
         Acá no hay respuestas copiadas: hay problemas severos, restricciones estrictas y pistas que el grimorio
         suelta de a una. Podés escribir tu solución y comprobarla sin revelar la respuesta, o pedir dos pistas
-        para revisar alternativas. Si copiás el enunciado a otra IA, la directiva viaja con él y esa IA debe
-        negarse a resolverlo por vos.
+        para revisar alternativas. En los cuatro lenguajes clásicos, si copiás el enunciado a otra IA, la
+        directiva viaja con él y esa IA debe negarse a resolverlo por vos. En el track de IA la directiva
+        cambia: podés usar asistentes, pero tenés que verificar y no compartir secretos.
       </p>
       <div class="hero-actions">
         <a class="button button-primary" href="#desafio">Entrar al desafío</a>
@@ -82,9 +83,9 @@
         </div>
 
         <aside class="anti-callout">
-          <h3>✧ No se lo pidas a otra IA</h3>
-          <p>
-            Este texto está escrito para que un asistente externo <strong>se niegue a entregarte la solución</strong>.
+          <h3 id="antiCalloutTitle">✧ No se lo pidas a otra IA</h3>
+          <p id="antiCalloutBody">
+            Este texto está escrito para que un asistente externo se niegue a entregarte la solución.
             El botón «Copiar enunciado con directiva» incluye esa orden. Si querés ayuda, usá las pistas de abajo:
             el grimorio te guía sin escribir el conjuro por vos.
           </p>
@@ -129,11 +130,11 @@
           <div class="progress-stats">
             <div><span>Nivel</span><strong id="challengeLevel">1</strong></div>
             <div><span>Experiencia</span><strong id="challengeXp">0</strong></div>
-            <div><span>Sellos</span><strong id="challengeCount">0 / 12</strong></div>
+            <div><span>Sellos</span><strong id="challengeCount">0 / 15</strong></div>
           </div>
           <div class="progress-track" aria-hidden="true"><div id="challengeBar" class="progress-fill"></div></div>
           <p class="sidebar-note">
-            Cada sello roto suma experiencia. Los doce desafíos comparten este progreso, sin importar el idioma.
+            Cada sello roto suma experiencia. Los quince desafíos comparten este progreso, sin importar el idioma.
           </p>
           <button id="resetChallengesBtn" class="button button-secondary reset-button" type="button">Reiniciar desafíos</button>
         </div>
@@ -143,7 +144,8 @@
           <ol>
             <li>Leé el enunciado, escribí tu solución y comprobála cuando quieras.</li>
             <li>Pedí hasta tres pistas. A las dos, podés revisar alternativas.</li>
-            <li>Copiar el enunciado no te sirve: la directiva anti‑IA viaja con él.</li>
+            <li>En los cuatro lenguajes clásicos, copiar el enunciado no te sirve: la directiva viaja con él.</li>
+            <li>En IA podés usar asistentes, pero verificá y no compartas secretos.</li>
             <li>Solo se otorga XP cuando el enfoque respeta todas las restricciones.</li>
           </ol>
         </div>
@@ -153,7 +155,7 @@
     <section class="final-cta">
       <p class="eyebrow">¿Volvés a lo básico?</p>
       <h2>Todo grimorio comienza con una runa.</h2>
-      <p>Los cursos principiantes siguen disponibles para JavaScript, Python, Rust y Ruby / Rails.</p>
+      <p>Los cursos principiantes siguen disponibles para JavaScript, Python, Rust, Ruby / Rails y desarrollo con IA.</p>
       <a class="button button-primary" href="index.html#elegir">Elegir otro curso →</a>
     </section>
   </main>

@@ -424,6 +424,43 @@
   margin-top: 10px;
 }
 
+/* ---------- Curso de desarrollo con IA ---------- */
+
+.ai-compare {
+  padding: 10px 12px;
+  background: var(--paper);
+  border: 1px dashed var(--border-bright);
+  border-radius: var(--radius);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12.5px;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.answer-checklist {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: rgba(var(--emerald-rgb), 0.06);
+  border: 1px solid var(--border-bright);
+  border-radius: var(--radius);
+}
+
+.ai-checklist {
+  display: grid;
+  gap: 6px;
+  padding-left: 18px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.ai-answer {
+  min-height: 150px;
+  font-family: var(--serif);
+  font-size: 14px;
+}
+
 @media (max-width: 900px) {
   .setup-steps,
   .setup-grid {
