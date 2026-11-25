@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Librojuego RPG para aprender JavaScript y prompts de IA.">
+  <title>El Grimorio del Sintaxista</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-sigil" aria-hidden="true">✦</span>
+        <div>
+          <h1>El Grimorio del Sintaxista</h1>
+          <p class="subtitle">Crónica de un aprendiz entre runas y algoritmos</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <a class="ghost-button" href="desafios.html?lenguaje=javascript&amp;nivel=medium">Desafíos →</a>
+        <a class="ghost-button" href="python.html" data-language="python">Cambiar a Python →</a>
+        <a class="ghost-button" href="index.html">← Portada</a>
+        <button id="inventoryBtn" class="ghost-button" type="button" aria-controls="inventoryDrawer" aria-expanded="false">
+          Inventario de hechizos <span id="inventoryCount" class="badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="book">
+      <!-- LA CRÓNICA -->
+      <section class="page chronicle" aria-label="La Crónica">
+        <div class="status-bar">
+          <span id="actLabel" class="act-label">Acto</span>
+          <span>Energía <strong id="energyValue">0</strong></span>
+          <span>Nivel <strong id="levelValue">1</strong> · XP <strong id="xpValue">0</strong></span>
+          <span id="progressLabel" class="progress-label">1 / 4</span>
+        </div>
+
+        <article class="chronicle-body">
+          <h2 id="sceneTitle">—</h2>
+          <div id="sceneNarrative" class="narrative"></div>
+          <div id="sceneTheory" class="theory-box"></div>
+          <div class="objective-box">
+            <h3>✧ Objetivo del sello</h3>
+            <p id="sceneObjective"></p>
+          </div>
+        </article>
+
+        <section class="oracle-panel" aria-label="Espíritu Guía">
+          <div class="oracle-tabs">
+            <span class="oracle-tab active">Espíritu Guía</span>
+            <span class="oracle-tab-note">tutor socrático · no entrega respuestas</span>
+          </div>
+          <div class="oracle-body">
+            <p id="oracleResponse" class="oracle-response" aria-live="polite">
+              El espíritu parpadea en la llama. Preguntá con contexto: te guiará, pero no escribirá el conjuro por vos.
+            </p>
+            <form id="oracleForm" class="oracle-form">
+              <label class="sr-only" for="oracleInput">Tu consulta al Espíritu Guía</label>
+              <textarea id="oracleInput" rows="2" placeholder="Ej.: ¿Cómo guardo un valor que no debo cambiar?"></textarea>
+              <button type="submit">Consultar</button>
+            </form>
+          </div>
+        </section>
+      </section>
+
+      <!-- EL GRIMORIO -->
+      <section class="page grimoire" aria-label="El Grimorio">
+        <div class="editor-toolbar">
+          <span class="file-label">grimorio.js</span>
+          <div class="editor-controls">
+            <button id="runBtn" class="primary-button" type="button">Invocar Conjuro</button>
+            <button id="resetBtn" class="ghost-button" type="button">Restaurar Página</button>
+          </div>
+        </div>
+
+        <div class="editor-wrap">
+          <div id="lineNumbers" class="gutter" aria-hidden="true"></div>
+          <textarea id="codeEditor" class="editor" wrap="off" spellcheck="false" aria-label="Editor de código JavaScript"></textarea>
+        </div>
+
+        <div class="console-panel">
+          <div class="console-header">
+            <span>Consola arcana</span>
+            <button id="clearConsoleBtn" class="text-button" type="button">Limpiar</button>
+          </div>
+          <div id="consoleOutput" class="console-output" role="log" aria-live="polite"></div>
+          <p id="resultBanner" class="result-banner" hidden aria-live="polite"></p>
+          <button id="continueBtn" class="continue-button" type="button" hidden>Seguir la crónica →</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <span>JavaScript ES6 · HTML5 · CSS3 · Sin frameworks</span>
+      <span>Progreso guardado en este navegador</span>
+    </footer>
+  </div>
+
+  <div id="inventoryOverlay" class="overlay" hidden></div>
+  <aside id="inventoryDrawer" class="drawer" aria-hidden="true" aria-label="Inventario de hechizos">
+    <header class="drawer-header">
+      <h2>Inventario de Hechizos</h2>
+      <button id="closeInventoryBtn" class="text-button" type="button" aria-label="Cerrar inventario">✕</button>
+    </header>
+    <div id="inventoryList" class="inventory-list"></div>
+    <footer class="drawer-footer">Cada sello roto desbloquea un concepto y su experiencia.</footer>
+  </aside>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/engine/language.js"></script>
+</body>
+</html>

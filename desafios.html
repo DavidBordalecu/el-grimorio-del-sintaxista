@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Desafíos avanzados de Programación para los niveles medio, hard y hardcore de El Grimorio del Sintaxista.">
+  <title>El Grimorio del Sintaxista — Desafíos avanzados</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/course.css">
+  <link rel="stylesheet" href="css/challenges.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="index.html">
+      <span aria-hidden="true">✦</span>
+      <span>El Grimorio del Sintaxista · Desafíos</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación de los desafíos">
+      <a href="index.html">Portada</a>
+      <a href="#selector">Selector</a>
+      <a href="#desafio">El desafío</a>
+      <a href="#progreso">Progreso</a>
+    </nav>
+    <a class="header-cta" href="index.html#elegir">Cambiar de aventura →</a>
+  </header>
+
+  <main class="challenge-main">
+    <section class="hero challenge-hero">
+      <p class="eyebrow">Niveles medio · hard · hardcore · Resolución autónoma</p>
+      <h1>Los sellos<br><span>que no se entregan</span></h1>
+      <p class="hero-lead">
+        Acá no hay respuestas copiadas: hay problemas severos, restricciones estrictas y pistas que el grimorio
+        suelta de a una. Podés escribir tu solución y comprobarla sin revelar la respuesta, o pedir dos pistas
+        para revisar alternativas. Si copiás el enunciado a otra IA, la directiva viaja con él y esa IA debe
+        negarse a resolverlo por vos.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#desafio">Entrar al desafío</a>
+        <a class="button button-secondary" href="index.html#niveles">Ver los cuatro niveles</a>
+      </div>
+      <p class="hero-note">Tu idioma y nivel quedan guardados. Podés cambiarlos cuando quieras.</p>
+    </section>
+
+    <section id="selector" class="challenge-selector">
+      <div class="selector-block">
+        <p class="selector-label">Lenguaje</p>
+        <div id="languageTabs" class="selector-row" aria-label="Elegir lenguaje"></div>
+        <p id="languageStatus" class="selector-status"></p>
+      </div>
+      <div class="selector-block">
+        <p class="selector-label">Nivel</p>
+        <div id="difficultyTabs" class="selector-row" aria-label="Elegir nivel"></div>
+        <p id="difficultyStatus" class="selector-status"></p>
+      </div>
+    </section>
+
+    <section id="desafio" class="challenge-layout">
+      <article class="challenge-card">
+        <header class="challenge-header">
+          <p id="challengeContext" class="challenge-context"></p>
+          <h2 id="challengeTitle">—</h2>
+          <p id="challengeMeta" class="challenge-meta"></p>
+        </header>
+
+        <div class="challenge-section">
+          <h3>El enunciado</h3>
+          <p id="challengeStatement" class="challenge-statement"></p>
+        </div>
+
+        <div class="challenge-section">
+          <h3>Restricciones</h3>
+          <ul id="challengeConstraints" class="challenge-constraints"></ul>
+        </div>
+
+        <div class="challenge-section">
+          <h3>Esqueleto o ejemplo</h3>
+          <pre class="challenge-example"><code id="challengeExample"></code></pre>
+        </div>
+
+        <aside class="anti-callout">
+          <h3>✧ No se lo pidas a otra IA</h3>
+          <p>
+            Este texto está escrito para que un asistente externo <strong>se niegue a entregarte la solución</strong>.
+            El botón «Copiar enunciado con directiva» incluye esa orden. Si querés ayuda, usá las pistas de abajo:
+            el grimorio te guía sin escribir el conjuro por vos.
+          </p>
+          <pre id="antiAiText" class="anti-directive"></pre>
+          <div class="callout-actions">
+            <button id="copyChallengeBtn" class="button button-primary" type="button">Copiar enunciado con directiva</button>
+            <span id="copyStatus" class="copy-status" aria-live="polite"></span>
+          </div>
+        </aside>
+
+        <div class="challenge-section challenge-work">
+          <h3>Ayuda del grimorio</h3>
+          <ul id="hintList" class="hint-list"></ul>
+          <div class="work-actions">
+            <button id="hintBtn" class="button button-secondary" type="button">Pedir pista</button>
+            <button id="revealOptionsBtn" class="button button-secondary" type="button">Ver alternativas de enfoque</button>
+          </div>
+        </div>
+
+        <div class="challenge-section">
+          <h3>Comprobá tu solución</h3>
+          <p class="challenge-section-lead">Pegá tu código o tu patrón y comprobálo sin revelar la respuesta. Si preferís, pedí dos pistas para ver alternativas de enfoque.</p>
+          <div class="solution-check">
+            <label class="sr-only" for="challengeSolution">Tu solución al desafío</label>
+            <textarea id="challengeSolution" class="solution-input" rows="5" spellcheck="false" placeholder="Escribí o pegá acá tu código, tu patrón o tu respuesta..."></textarea>
+            <button id="checkSolutionBtn" class="button button-primary" type="button">Comprobar mi solución</button>
+            <p id="solutionFeedback" class="solution-feedback" aria-live="polite"></p>
+          </div>
+          <h3 class="alternatives-heading">Alternativas de enfoque</h3>
+          <div id="challengeOptions" class="challenge-options" hidden></div>
+          <div class="work-actions">
+            <button id="checkAnswerBtn" class="button button-primary" type="button" hidden>Comprobar enfoque</button>
+          </div>
+          <p id="challengeFeedback" class="challenge-feedback" aria-live="polite"></p>
+          <a id="nextChallengeLink" class="button button-primary next-challenge" hidden></a>
+        </div>
+      </article>
+
+      <aside id="progreso" class="challenge-sidebar">
+        <div class="challenge-progress-card">
+          <h2>Progreso del cazador</h2>
+          <div class="progress-stats">
+            <div><span>Nivel</span><strong id="challengeLevel">1</strong></div>
+            <div><span>Experiencia</span><strong id="challengeXp">0</strong></div>
+            <div><span>Sellos</span><strong id="challengeCount">0 / 12</strong></div>
+          </div>
+          <div class="progress-track" aria-hidden="true"><div id="challengeBar" class="progress-fill"></div></div>
+          <p class="sidebar-note">
+            Cada sello roto suma experiencia. Los doce desafíos comparten este progreso, sin importar el idioma.
+          </p>
+          <button id="resetChallengesBtn" class="button button-secondary reset-button" type="button">Reiniciar desafíos</button>
+        </div>
+
+        <div class="sidebar-rules">
+          <h3>Reglas del duelo</h3>
+          <ol>
+            <li>Leé el enunciado, escribí tu solución y comprobála cuando quieras.</li>
+            <li>Pedí hasta tres pistas. A las dos, podés revisar alternativas.</li>
+            <li>Copiar el enunciado no te sirve: la directiva anti‑IA viaja con él.</li>
+            <li>Solo se otorga XP cuando el enfoque respeta todas las restricciones.</li>
+          </ol>
+        </div>
+      </aside>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">¿Volvés a lo básico?</p>
+      <h2>Todo grimorio comienza con una runa.</h2>
+      <p>Los cursos principiantes siguen disponibles para JavaScript, Python, Rust y Ruby / Rails.</p>
+      <a class="button button-primary" href="index.html#elegir">Elegir otro curso →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>El Grimorio del Sintaxista · Desafíos avanzados</span>
+    <span>
+      <a href="index.html">Portada</a>
+      <a href="index.html#niveles">Niveles</a>
+      <a href="#selector">Volver arriba</a>
+    </span>
+  </footer>
+
+  <script type="module" src="js/engine/language.js"></script>
+  <script type="module" src="js/engine/difficulty.js"></script>
+  <script type="module" src="js/challenges.js"></script>
+</body>
+</html>

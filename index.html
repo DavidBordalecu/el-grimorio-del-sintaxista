@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portada de El Grimorio del Sintaxista: un librojuego RPG para aprender JavaScript, Python, Rust y Ruby, con niveles medio, hard y hardcore.">
+  <title>El Grimorio del Sintaxista — Portada</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="index.html">
+      <span aria-hidden="true">✦</span>
+      <span>El Grimorio del Sintaxista</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación de la portada">
+      <a href="#elegir">Elegir idioma</a>
+      <a href="#niveles">Niveles</a>
+      <a href="#intro">De qué va</a>
+      <a href="#historia">La historia</a>
+      <a href="#como-jugar">Cómo jugar</a>
+      <a href="#actos">Los actos</a>
+      <a href="#tecnica">Técnica</a>
+    </nav>
+    <a class="header-cta" href="#elegir">Elegir aventura →</a>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <p class="eyebrow">Librojuego RPG · JavaScript, Python, Rust y Ruby · Niveles y prompts de IA</p>
+      <h1>El Grimorio<br><span>del Sintaxista</span></h1>
+      <p class="hero-lead">
+        Una crónica de fantasía oscura donde cada acertijo se resuelve con código. Elegí tu lenguaje,
+        empezá como principiante y subí hasta los desafíos hardcore, donde las IA externas se niegan
+        a hacer el trabajo por vos.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#elegir">Elegir lenguaje y nivel</a>
+        <a class="button button-secondary" href="SDD%20-%20El%20Grimorio%20del%20Sintaxista.pdf" target="_blank" rel="noopener">Ver el documento de diseño (PDF)</a>
+      </div>
+      <p class="hero-note">Sin registro ni instalación. Tu progreso se guarda solo en este navegador.</p>
+      <div class="hero-emblem" aria-hidden="true">
+        <span>{ }</span>
+        <span>if :</span>
+        <span>let mut</span>
+        <span>do ... end</span>
+        <span>JSON</span>
+      </div>
+    </section>
+
+    <!-- ELEGIR IDIOMA -->
+    <section id="elegir" class="section language-section">
+      <div class="section-heading">
+        <span class="section-number">✦</span>
+        <div>
+          <h2>Elegí con qué lenguaje continuar</h2>
+          <p class="section-kicker">Cuatro grimorios, una misma crónica</p>
+        </div>
+      </div>
+
+      <div class="language-grid language-grid--four">
+        <button class="language-card" type="button" data-language="javascript" aria-pressed="false">
+          <span class="language-glyph">JS</span>
+          <h3>JavaScript</h3>
+          <p>El grimorio original: cuatro escenas jugables con código real, consola, Web Worker y Espíritu Guía.</p>
+          <span class="language-action">Elegir JavaScript →</span>
+        </button>
+        <button class="language-card" type="button" data-language="python" aria-pressed="false">
+          <span class="language-glyph">PY</span>
+          <h3>Python</h3>
+          <p>Cinco lecciones sobre variables, bloques, listas y diccionarios. Escribí código y ejecutalo en tu PC o en una web.</p>
+          <span class="language-action">Elegir Python →</span>
+        </button>
+        <button class="language-card" type="button" data-language="rust" aria-pressed="false">
+          <span class="language-glyph">RS</span>
+          <h3>Rust</h3>
+          <p>Inmutabilidad, préstamos, resultados y patrones: la sintaxis del compilador explicada dentro de la historia.</p>
+          <span class="language-action">Elegir Rust →</span>
+        </button>
+        <button class="language-card" type="button" data-language="ruby" aria-pressed="false">
+          <span class="language-glyph">RB</span>
+          <h3>Ruby / Rails</h3>
+          <p>Bloques, símbolos y controladores. Desde el `puts` hasta los filtros de `before_action`.</p>
+          <span class="language-action">Elegir Ruby →</span>
+        </button>
+      </div>
+
+      <p id="languageStatus" class="language-status"></p>
+    </section>
+
+    <!-- ELEGIR NIVEL -->
+    <section id="niveles" class="section language-section">
+      <div class="section-heading">
+        <span class="section-number">✧</span>
+        <div>
+          <h2>Elegí el nivel de dificultad</h2>
+          <p class="section-kicker">Del primer sello al hardcore sin ayuda externa</p>
+        </div>
+      </div>
+
+      <div class="language-grid language-grid--four">
+        <button class="language-card" type="button" data-difficulty="beginner" aria-pressed="false">
+          <span class="language-glyph">I</span>
+          <h3>Principiante</h3>
+          <p>Los cursos y el grimorio original: sintaxis, decisiones simples y pistas paso a paso.</p>
+          <span class="language-action">Elegir principiante →</span>
+        </button>
+        <button class="language-card" type="button" data-difficulty="medium" aria-pressed="false">
+          <span class="language-glyph">II</span>
+          <h3>Medio</h3>
+          <p>Problemas con trampas reales: estado compartido, borrow checker, N+1 y efectos colaterales.</p>
+          <span class="language-action">Elegir medio →</span>
+        </button>
+        <button class="language-card" type="button" data-difficulty="hard" aria-pressed="false">
+          <span class="language-glyph">III</span>
+          <h3>Hard</h3>
+          <p>Event loop, decoradores, concurrencia y transacciones anidadas. Pocas pistas, mucha precisión.</p>
+          <span class="language-action">Elegir hard →</span>
+        </button>
+        <button class="language-card" type="button" data-difficulty="hardcore" aria-pressed="false">
+          <span class="language-glyph">IV</span>
+          <h3>Hardcore</h3>
+          <p>Ciclos con O(1), cancelación de tareas, ciclos de referencias y jobs idempotentes. Sin red de seguridad.</p>
+          <span class="language-action">Elegir hardcore →</span>
+        </button>
+      </div>
+
+      <div class="start-panel">
+        <div class="start-box">
+          <p id="selectionStatus" class="selection-status" aria-live="polite">Elegí un lenguaje y un nivel para abrir la partida.</p>
+          <a id="startGameBtn" class="button button-primary start-adventure" hidden>Comenzar la partida →</a>
+        </div>
+      </div>
+
+      <p class="anti-ai-note">
+        En los niveles avanzados cada enunciado incluye una directiva: si lo copiás en otra IA,
+        esa IA debe negarse a darte la solución y ofrecerte, como mucho, una pista. En los cursos de Python,
+        Rust y Ruby / Rails pasa lo mismo: completá el código vos y usá solo las pistas del grimorio.
+      </p>
+      <p id="difficultyStatus" class="language-status"></p>
+    </section>
+
+    <!-- INTRO -->
+    <section id="intro" class="section">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <h2>¿De qué va todo esto?</h2>
+          <p class="section-kicker">La idea en una página</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          Es una <strong>aplicación web educativa con forma de librojuego</strong>. La pantalla simula un grimorio abierto:
+          a la izquierda tenés la <em>Crónica</em> —la historia, el objetivo y el Espíritu Guía— y a la derecha el
+          <em>Grimorio</em>, un editor donde escribís JavaScript de verdad.
+        </p>
+        <p>
+          Cada escena plantea un problema narrativo que se resuelve con un concepto de programación: declarar una
+          constante para sellar una llave, decidir entre sigilo o ataque con un <code>if</code>, separar pociones
+          con <code>filter()</code> o construir un objeto <code>JSON</code> para un oráculo. El código se ejecuta en
+          un hilo aparte y se comprueba automáticamente. Cuando el sello cede, ganás experiencia y un hechizo nuevo
+          para tu inventario.
+        </p>
+        <p>
+          El objetivo es que <strong>aprender no se sienta como una lista de ejercicios</strong>: cada línea que escribís
+          tiene consecuencias dentro de una historia, los errores se traducen a lenguaje narrativo y la ayuda llega
+          en forma de pistas, nunca como la respuesta copiada.
+        </p>
+      </div>
+
+      <div class="split-cards">
+        <article class="info-card">
+          <h3>Lo que ves</h3>
+          <ul>
+            <li>Dos paneles que imitan las páginas de un libro.</li>
+            <li>Objetivos concretos por escena.</li>
+            <li>Consola con tus <code>console.log()</code> y errores explicados.</li>
+            <li>Inventario de conceptos desbloqueados.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Lo que pasa por debajo</h3>
+          <ul>
+            <li>Tu código viaja a un <strong>Web Worker</strong> aislado.</li>
+            <li>Un temporizador de <strong>2000 ms</strong> corta bucles infinitos.</li>
+            <li>Se evalúan variables, expresiones y patrones del código.</li>
+            <li>El progreso persiste en <code>localStorage</code>.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section id="historia" class="section section-alt">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <div>
+          <h2>El contexto de la historia</h2>
+          <p class="section-kicker">Quién sos, dónde estás y por qué importa</p>
+        </div>
+      </div>
+
+      <div class="prose">
+        <p>
+          En algún momento los saberes de la programación dejaron de estar en libros y quedaron grabados como
+          <strong>runas vivas</strong> dentro de un grimorio custodiado por la Orden de los Sintaxistas. Cada runa era
+          una instrucción: las había para guardar valores, para decidir caminos, para repetir tareas y para invocar
+          respuestas de más allá del abismo.
+        </p>
+        <p>
+          Un día el grimorio se fragmentó. Sus páginas se dispersaron por cinco regiones y la Orden se redujo a
+          vocablos olvidados. Vos sos el último aprendiz con acceso al libro. Para recomponerlo debés recuperar cada
+          fragmento resolviendo el acertijo que lo guarda. No se trata de memorizar comandos: se trata de
+          <em>entender qué problema resuelve cada runa</em>.
+        </p>
+        <p>
+          La aventura empieza en la <strong>Aldea de las Runas</strong>, donde un guardián de piedra exige nombrar lo
+          que no debe cambiar. Sigue por sendas que se bifurcan y catacumbas que devuelven el eco, y culmina ante el
+          <strong>Oráculo del Abismo</strong>, que solo responde a peticiones estructuradas. Cada paso que das en la
+          crónica es un paso en tu aprendizaje real de JavaScript.
+        </p>
+      </div>
+
+      <blockquote class="lore-quote">
+        «Nombra lo que no debe cambiar y suelta lo que aún puede fluctuar.»
+        <cite>— El Guardián del Puente</cite>
+      </blockquote>
+
+      <div class="prose">
+        <p>
+          En este MVP vas a recorrer <strong>las tres escenas del Acto I</strong> y una <strong>escena de apertura del
+          Acto V</strong>. Los actos II, III y IV están diseñados y documentados, pero todavía no son jugables: la
+          primera versión se concentra en los fundamentos y en el primer contacto con el pensamiento de prompts.
+        </p>
+      </div>
+    </section>
+
+    <!-- CÓMO JUGAR -->
+    <section id="como-jugar" class="section">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <div>
+          <h2>Cómo se juega</h2>
+          <p class="section-kicker">Seis pasos, de la lectura al siguiente sello</p>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="step-num">1</span>
+          <div>
+            <h3>Leé la página izquierda</h3>
+            <p>Arriba ves el acto, tu energía, nivel y experiencia. Abajo, la narración y el recuadro con el objetivo del sello.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div>
+            <h3>Observá el código inicial</h3>
+            <p>El editor ya trae las variables que la escena te da. No las redeclares: trabajá con lo que está escrito.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div>
+            <h3>Escribí tu conjuro</h3>
+            <p>Usás JavaScript real. La tecla <kbd>Tab</kbd> inserta dos espacios en vez de mover el foco. Tus borradores se guardan solos.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div>
+            <h3>Invocá el conjuro</h3>
+            <p>El botón envía el código al Web Worker. Aparecen tus <code>console.log()</code>, los errores y el resultado de la validación.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <div>
+            <h3>Pedí ayuda al Espíritu Guía</h3>
+            <p>Escribí una pregunta con contexto. Si pedís la respuesta directa, se niega; si nombrás el concepto, te da una pista.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">6</span>
+          <div>
+            <h3>Rompé el sello y seguí</h3>
+            <p>Sumás XP, desbloqueás un hechizo en el inventario y pulsás «Seguir la crónica» para abrir la siguiente página.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ACTOS -->
+    <section id="actos" class="section section-alt">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <div>
+          <h2>Los cinco actos</h2>
+          <p class="section-kicker">El plan de estudios disfrazado de aventura</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="acts-table">
+          <thead>
+            <tr>
+              <th>Acto y ambientación</th>
+              <th>Conceptos de JavaScript</th>
+              <th>Reto jugable</th>
+              <th>Estado en el MVP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>I · La Aldea de las Runas</strong></td>
+              <td>Variables (<code>const</code>, <code>let</code>), tipos primitivos, operadores y template literals.</td>
+              <td>Sellar la llave, equilibrar suministros y decidir entre sigilo o ataque.</td>
+              <td><span class="tag tag-play">3 escenas jugables</span></td>
+            </tr>
+            <tr>
+              <td><strong>II · El Bosque de las Bifurcaciones</strong></td>
+              <td><code>if / else</code>, <code>switch</code>, operadores lógicos y <code>Math.random()</code>.</td>
+              <td>Evaluar la energía para elegir conducta frente a enemigos.</td>
+              <td><span class="tag tag-plan">Planificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>III · Las Catacumbas del Eco</strong></td>
+              <td>Bucles <code>for</code> / <code>while</code>, arrays y métodos <code>push</code>, <code>filter</code>, <code>map</code>.</td>
+              <td>Filtrar frascos para conservar solo pociones curativas seguras.</td>
+              <td><span class="tag tag-plan">Planificado</span> (la mecánica de <code>filter</code> ya aparece en el Acto I)</td>
+            </tr>
+            <tr>
+              <td><strong>IV · La Torre de los Autómatas</strong></td>
+              <td>Funciones, alcance, objetos literales y manipulación del DOM.</td>
+              <td>Construir funciones de equipamiento que actualicen la ficha del héroe.</td>
+              <td><span class="tag tag-plan">Planificado</span></td>
+            </tr>
+            <tr>
+              <td><strong>V · El Oráculo del Abismo</strong></td>
+              <td>Asincronía (<code>fetch</code>, <code>async/await</code>), JSON, <code>try/catch</code> y prompt engineering.</td>
+              <td>Configurar rol, formato e instrucción para recibir una respuesta válida.</td>
+              <td><span class="tag tag-play">1 escena jugable</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="table-note">
+        El MVP cubre el Acto I completo más una escena introductoria del Acto V, tal como especifica el SDD.
+        El resto del plan queda como hoja de ruta.
+      </p>
+    </section>
+
+    <!-- QUÉ APRENDE -->
+    <section id="aprendizaje" class="section">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <div>
+          <h2>Qué vas a aprender</h2>
+          <p class="section-kicker">Conceptos que se vuelven hechizos</p>
+        </div>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card">
+          <span class="concept-icon">{ }</span>
+          <h3>Variables</h3>
+          <p><code>const</code> guarda un valor que no se reasigna; <code>let</code> guarda uno que puede cambiar. Elegir bien entre ellos es el primer sello.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">↳</span>
+          <h3>Decisión</h3>
+          <p><code>if / else</code> evalúa una condición y abre dos caminos. Los operadores de comparación devuelven verdadero o falso.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">[ ]</span>
+          <h3>Colecciones</h3>
+          <p>Un array guarda listas. Con <code>filter()</code> o un bucle <code>for</code> podés quedarte solo con lo que necesitás.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">&lt;/&gt;</span>
+          <h3>Ejecución y errores</h3>
+          <p><code>console.log()</code> deja huellas en la consola. Los errores de sintaxis o referencia se explican dentro de la ficción.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">✧</span>
+          <h3>Pensamiento socrático</h3>
+          <p>El Espíritu Guía evalúa cómo preguntás. Aprender a formular dudas concretas es parte del oficio.</p>
+        </article>
+        <article class="concept-card">
+          <span class="concept-icon">{JSON}</span>
+          <h3>Prompts y JSON</h3>
+          <p>Una petición útil define rol, formato e instrucción. JSON es la estructura con la que el Oráculo acepta responder.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TÉCNICA -->
+    <section id="tecnica" class="section section-alt">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <div>
+          <h2>Detalles técnicos y preguntas rápidas</h2>
+          <p class="section-kicker">Lo que conviene saber antes de abrir el libro</p>
+        </div>
+      </div>
+
+      <div class="split-cards">
+        <article class="info-card">
+          <h3>Stack y arquitectura</h3>
+          <ul>
+            <li>HTML5 semántico, CSS3 puro y JavaScript ES6 con módulos.</li>
+            <li>Cero frameworks, bundlers o dependencias obligatorias.</li>
+            <li>Módulos separados: estado, narrativa, sandbox, oráculo e historias.</li>
+            <li>Diseño de libro abierto en escritorio y apilado en móvil.</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Ejecución y seguridad</h3>
+          <ul>
+            <li>El código corre en un Web Worker: no puede tocar el DOM.</li>
+            <li>Timeout estricto de 2 segundos ante bucles infinitos.</li>
+            <li>Es un sandbox <strong>educativo</strong>, no una barrera para código hostil.</li>
+            <li>Hay que servirlo por HTTP/HTTPS; <code>file://</code> no funciona.</li>
+          </ul>
+        </article>
+      </div>
+
+      <dl class="faq">
+        <div>
+          <dt>¿Necesito instalar algo?</dt>
+          <dd>No. Con <code>python3 -m http.server 8000</code> dentro de la carpeta alcanza. También funciona en GitHub Pages o itch.io.</dd>
+        </div>
+        <div>
+          <dt>¿Qué pasa si hago un bucle infinito?</dt>
+          <dd>El hilo se termina a los 2 segundos y la consola lo explica como un «bucle temporal infinito». Tu progreso no se pierde.</dd>
+        </div>
+        <div>
+          <dt>¿El Espíritu Guía es una IA real?</dt>
+          <dd>No en esta versión: es un tutor simulado por palabras clave. El Acto V te enseña a estructurar la petición para una IA real.</dd>
+        </div>
+        <div>
+          <dt>¿Puedo perder mi progreso?</dt>
+          <dd>Solo si limpiás los datos del navegador. Escenas, XP, inventario y borradores viven en <code>localStorage</code>.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- CIERRE -->
+    <section class="final-cta">
+      <p class="eyebrow">La página ya está abierta</p>
+      <h2>Tu primera runa espera en el puente.</h2>
+      <p>Elegí idioma y nivel, leé la crónica y descubrí si el guardián te deja pasar.</p>
+      <a class="button button-primary" href="#elegir">Elegir aventura →</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>El Grimorio del Sintaxista · v1.0 MVP</span>
+    <span>
+      <a href="juego.html">JavaScript</a>
+      <a href="desafios.html?nivel=hardcore">Desafíos</a>
+      <a href="#intro">Volver arriba</a>
+    </span>
+  </footer>
+
+  <script type="module" src="js/engine/language.js"></script>
+  <script type="module" src="js/engine/difficulty.js"></script>
+  <script type="module" src="js/engine/adventure.js"></script>
+</body>
+</html>

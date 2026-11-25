@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Curso interactivo de Rust con la estética de El Grimorio del Sintaxista.">
+  <title>El Grimorio del Sintaxista — Curso de Rust</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/course.css">
+</head>
+<body>
+  <div class="crt-overlay" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="site-brand" href="index.html">
+      <span aria-hidden="true">✦</span>
+      <span>El Grimorio del Sintaxista · Rust</span>
+    </a>
+    <nav class="site-nav" aria-label="Navegación del curso">
+      <a href="index.html">Portada</a>
+      <a href="#guia">Cómo practicar</a>
+      <a href="#lecciones">Lecciones</a>
+      <a href="#progreso">Progreso</a>
+      <a href="desafios.html?lenguaje=rust&amp;nivel=medium">Desafíos</a>
+    </nav>
+    <a class="header-cta" href="index.html#elegir" data-language="rust">Cambiar idioma →</a>
+  </header>
+
+  <main class="course-main">
+    <section class="hero course-hero">
+      <p class="eyebrow">Edición Rust · Ejecutá en tu equipo · Pegá la salida</p>
+      <h1>El Grimorio<br><span>en Rust</span></h1>
+      <p class="hero-lead">
+        Runas inmutables, préstamos y resultados que pueden fallar. Completá el código inicial, compilalo en tu
+        computadora o en Rust Playground y pegá la salida exacta. Acá se valida el resultado: el código lo escribís y lo corre vos.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#guia">Ver cómo practicar</a>
+        <a class="button button-secondary" href="#lecciones">Ir a las lecciones</a>
+      </div>
+      <p class="hero-note">¿Querés ir más lejos? Desde la portada podés abrir los niveles medio, hard y hardcore.</p>
+      <div class="hero-emblem" aria-hidden="true">
+        <span>let mut</span>
+        <span>&amp;T</span>
+        <span>Result&lt;T, E&gt;</span>
+        <span>match</span>
+        <span>?</span>
+      </div>
+    </section>
+
+    <section id="guia" class="section setup-guide">
+      <div class="section-heading">
+        <span class="section-number">✧</span>
+        <div>
+          <h2>Antes de empezar: cómo trabajar</h2>
+          <p class="section-kicker">Compilar también es parte del aprendizaje</p>
+        </div>
+      </div>
+
+      <div class="setup-steps">
+        <div class="setup-step"><span>01</span><div><h3>Copiá el código inicial</h3><p>Cada lección tiene un botón «Copiar código inicial». Reemplazá los huecos `______` con tu código.</p></div></div>
+        <div class="setup-step"><span>02</span><div><h3>Compilalo fuera del juego</h3><p>Si el compilador se queja, leé el error y corregilo. Esa es la práctica real de Rust.</p></div></div>
+        <div class="setup-step"><span>03</span><div><h3>Copiá la salida exacta</h3><p>Cuando el programa corra, pegá lo que imprimió en el campo de la lección.</p></div></div>
+        <div class="setup-step"><span>04</span><div><h3>Comprobá y seguí</h3><p>Si coincide con la salida esperada, se rompe el sello, sumás XP y se abre la siguiente lección.</p></div></div>
+      </div>
+
+      <div class="setup-grid">
+        <article class="setup-card">
+          <h3>Desde tu PC</h3>
+          <ol>
+            <li>Instalá el compilador con <a href="https://rustup.rs/" target="_blank" rel="noopener">rustup.rs</a>.</li>
+            <li>Guardá el código en <code>main.rs</code>.</li>
+            <li>En una terminal ejecutá <code>rustc main.rs &amp;&amp; ./main</code>.</li>
+          </ol>
+          <p class="setup-card-note">En Windows usá <code>rustc main.rs &amp;&amp; main.exe</code>. Si preferís, también podés crear un proyecto con <code>cargo new</code>.</p>
+        </article>
+        <article class="setup-card">
+          <h3>En una web</h3>
+          <ol>
+            <li>Abrí <a href="https://play.rust-lang.org/" target="_blank" rel="noopener">Rust Playground</a>, el sitio oficial.</li>
+            <li>Pegá el código completado y pulsá <strong>Run</strong>.</li>
+            <li>Copiá la salida de la pestaña <em>Stdout</em> y pégala en la lección.</li>
+          </ol>
+          <p class="setup-card-note">No hace falta iniciar sesión. Podés cambiar entre <em>debug</em> y <em>release</em>; para estas lecciones alcanza con <em>debug</em>.</p>
+        </article>
+      </div>
+
+      <p class="setup-note">La idea es practicar escribiendo código. No pidas el programa terminado a otra IA: completá los huecos y usá las pistas del grimorio si te trabás.</p>
+    </section>
+
+    <section id="progreso" class="course-progress-section">
+      <div class="section-heading">
+        <span class="section-number">✧</span>
+        <div>
+          <h2>Tu progreso</h2>
+          <p class="section-kicker">Cada sello roto queda guardado en este navegador</p>
+        </div>
+      </div>
+      <div class="progress-card">
+        <div class="progress-stats">
+          <div><span>Nivel</span><strong id="courseLevel">1</strong></div>
+          <div><span>Experiencia</span><strong id="courseXp">0</strong></div>
+          <div><span>Lecciones</span><strong id="courseCount">0 / 4</strong></div>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div id="courseBar" class="progress-fill"></div></div>
+        <div class="inventory-block">
+          <h3>Hechizos desbloqueados</h3>
+          <ul id="pythonInventory" class="python-inventory"></ul>
+        </div>
+        <button id="resetPythonBtn" class="button button-secondary reset-button" type="button">Reiniciar curso</button>
+      </div>
+    </section>
+
+    <section id="lecciones" class="course-lessons-section">
+      <div class="section-heading">
+        <span class="section-number">❧</span>
+        <div>
+          <h2>Las lecciones</h2>
+          <p class="section-kicker">Elegí la runa que compila dentro de la historia</p>
+        </div>
+      </div>
+      <div id="lessonsContainer" class="lessons-container"></div>
+    </section>
+
+    <section class="section final-language">
+      <div class="section-heading">
+        <span class="section-number">✦</span>
+        <div>
+          <h2>Seguí eligiendo</h2>
+          <p class="section-kicker">Volvé a la portada para cambiar de idioma o subir de nivel</p>
+        </div>
+      </div>
+      <div class="language-grid language-grid--four">
+        <a class="language-card" href="juego.html" data-language="javascript"><span class="language-glyph">JS</span><h3>JavaScript</h3><p>El grimorio original.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card" href="python.html" data-language="python"><span class="language-glyph">PY</span><h3>Python</h3><p>Curso de cinco lecciones.</p><span class="language-action">Abrir →</span></a>
+        <a class="language-card" href="rust.html" data-language="rust"><span class="language-glyph">RS</span><h3>Rust</h3><p>Estás en este curso.</p><span class="language-action">Continuar →</span></a>
+        <a class="language-card" href="ruby.html" data-language="ruby"><span class="language-glyph">RB</span><h3>Ruby / Rails</h3><p>Bloques y controladores.</p><span class="language-action">Abrir →</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>El Grimorio del Sintaxista · Curso de Rust</span>
+    <span>
+      <a href="index.html">Portada</a>
+      <a href="desafios.html?lenguaje=rust&amp;nivel=medium">Niveles avanzados</a>
+      <a href="#progreso">Volver arriba</a>
+    </span>
+  </footer>
+
+  <script type="module" src="js/rust-course.js"></script>
+  <script type="module" src="js/engine/language.js"></script>
+  <script type="module" src="js/engine/difficulty.js"></script>
+</body>
+</html>
